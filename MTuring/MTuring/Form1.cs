@@ -16,5 +16,15 @@ namespace MTuring
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Run_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

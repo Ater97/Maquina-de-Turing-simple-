@@ -1,0 +1,10 @@
+D:\Stuff\Docs\Maquina-de-Turing-simple-\MTuring\MTuring\bin\Debug\MTuring.exe.config
+D:\Stuff\Docs\Maquina-de-Turing-simple-\MTuring\MTuring\bin\Debug\MTuring.exe
+D:\Stuff\Docs\Maquina-de-Turing-simple-\MTuring\MTuring\bin\Debug\MTuring.pdb
+D:\Stuff\Docs\Maquina-de-Turing-simple-\MTuring\MTuring\obj\Debug\MTuring.csprojResolveAssemblyReference.cache
+D:\Stuff\Docs\Maquina-de-Turing-simple-\MTuring\MTuring\obj\Debug\MTuring.Form1.resources
+D:\Stuff\Docs\Maquina-de-Turing-simple-\MTuring\MTuring\obj\Debug\MTuring.Properties.Resources.resources
+D:\Stuff\Docs\Maquina-de-Turing-simple-\MTuring\MTuring\obj\Debug\MTuring.csproj.GenerateResource.Cache
+D:\Stuff\Docs\Maquina-de-Turing-simple-\MTuring\MTuring\obj\Debug\MTuring.csproj.CoreCompileInputs.cache
+D:\Stuff\Docs\Maquina-de-Turing-simple-\MTuring\MTuring\obj\Debug\MTuring.exe
+D:\Stuff\Docs\Maquina-de-Turing-simple-\MTuring\MTuring\obj\Debug\MTuring.pdb
