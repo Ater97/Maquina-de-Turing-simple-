@@ -9,4 +9,4 @@ Simulador de máquinas de Turing
  4. Suma en código unario: Reconoce una cadena y realiza la suma respectiva. 
  5. Resta en código unario: Reconoce una cadena y realiza la resta respectiva
 
-![alt text](https://github.com/Ater97/Maquina-de-Turing-simple-/blob/master/Diagrams/Palindromo.png)
+Diagramas en: https://github.com/Ater97/Maquina-de-Turing-simple-/wiki

@@ -8,6 +8,21 @@ namespace MTuring
 {
     class Palindromos
     {
+        Header Myheader = new Header();
+        public void initialize(char firstChar)
+        {
+            Myheader.CurrentState = 0;
+            Myheader.CurrentChar = firstChar;
+        }
+
+        public Header Read(Header actualHeader)
+        {
+            Header header = new Header();
+
+            return header;
+        }
+
+
 
 
     }
