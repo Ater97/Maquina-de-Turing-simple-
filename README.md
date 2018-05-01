@@ -1,4 +1,4 @@
-# Maquina-de-Turing-simple-
+﻿# Maquina-de-Turing-simple-
 Simulador de máquinas de Turing 
 
  Descripción Realizar las definiciones formales junto con el diagrama y tabla de transiciones de las 
@@ -8,3 +8,5 @@ Simulador de máquinas de Turing
  3. Multiplicación en código unario: Reconoce una cadena y realiza la multiplicación respectiva. 
  4. Suma en código unario: Reconoce una cadena y realiza la suma respectiva. 
  5. Resta en código unario: Reconoce una cadena y realiza la resta respectiva
+
+![alt text](https://github.com/Ater97/Maquina-de-Turing-simple-/blob/master/Diagrams/Palindromo.png)
