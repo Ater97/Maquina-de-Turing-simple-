@@ -8,12 +8,10 @@ namespace MTuring
 {
     class Header
     {
-
         public int NumberMovs { get; set; }
-        public int CurrentState { get; set; }
-        public int NextState { get; set; }
+        public int State { get; set; }
         public char CurrentChar { get; set; }
-        public int NextMove { get; set; } // 1 right & 0 left
-        public char NewChar { get; set; }
+        public char Char { get; set; }     // E => Blank
+        public int WhereMove { get; set; } // 1 right & 0 left
     }
 }

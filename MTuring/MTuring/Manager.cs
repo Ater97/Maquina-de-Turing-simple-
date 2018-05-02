@@ -8,34 +8,30 @@ namespace MTuring
 {
     class Manager
     {
-        public char[] Characters { get; set; }
-        public void GetMachine (String machineNumber)
+        public Palindromos p = new Palindromos();
+
+        public Header GetMachine (String machineNumber, char actualChar, int StateNumber)
         {
             switch (machineNumber)
             {
                 case "Palindrome":
-                    PAL();
-                    break;
+                    p.Read(StateNumber, actualChar);
+                    return p.Myheader;
                 case "Copy":
                     break;
                 default:
                     //  MessageBox.Show("Select the Turing Machine");
-                    break;
+                    return null;
 
             }
+            return null;
         }
 
         public bool IsFinished()
         {
-            bool flag = true;
-            
-            return flag;
-        }
-
-        public void PAL()
-        {
-            Palindromos p = new Palindromos();
-            p.initialize(Characters[0]);
+            if (p.ERROR == true || p.finished == true)
+                return false;
+            return true;
         }
     }
 }
