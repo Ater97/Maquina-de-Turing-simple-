@@ -9,6 +9,7 @@ namespace MTuring
     class Manager
     {
         public Palindromos p = new Palindromos();
+        public Copy C = new Copy();
 
         public Header GetMachine (String machineNumber, char actualChar, int StateNumber)
         {
@@ -18,6 +19,7 @@ namespace MTuring
                     p.Read(StateNumber, actualChar);
                     return p.Myheader;
                 case "Copy":
+                    C.Read(StateNumber, actualChar);
                     break;
                 default:
                     //  MessageBox.Show("Select the Turing Machine");

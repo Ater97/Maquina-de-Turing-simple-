@@ -19,10 +19,11 @@ namespace MTuring
         }
 
         String originalString = "";
-        Manager M = new Manager();
+        
         char[] Characters = new char[100];
         private void Run_btn_Click(object sender, EventArgs e)
         {
+            Manager M = new Manager();
             originalString = textBox1.Text.Trim() + "E";
             textBox1.Enabled = false;
             label7.Text = "";
@@ -35,7 +36,7 @@ namespace MTuring
                     comboBox1.Enabled = false;
                     Header MainHeader = new Header();
                     MainHeader.State = 0;
-                    int position = -1;
+                    int position = 0;
                     Characters = originalString.ToCharArray();
 
                     rtbTape.ResetText();
@@ -47,18 +48,25 @@ namespace MTuring
 
                      while (M.IsFinished())
                      {
-                         Characters = originalString.ToCharArray();
-                         Thread.Sleep(500);
-                         MainHeader = M.GetMachine(comboBox1.Text.ToString(), Characters[position+1], MainHeader.State);
-                         if (MainHeader.WhereMove == 1)
-                             position++;
-                         else
-                             position--;
-                         label7.Text = MainHeader.State.ToString();
-                         label6.Text = MainHeader.NumberMovs.ToString();
-                         ChangeCharacter(position, MainHeader.Char);
-                         HighlightSymbol(position);
+                        Characters = originalString.ToCharArray();
+                        //Thread.Sleep(500);
+                        MainHeader = M.GetMachine(comboBox1.Text.ToString(), Characters[position], MainHeader.State);
 
+                        if (MainHeader.WhereMove == 1)
+                        {
+                            ChangeCharacter(position, MainHeader.Char);
+                            HighlightSymbol(position);
+                            position++;
+                        }
+                        else
+                        {
+                            ChangeCharacter(position, MainHeader.Char);
+                            HighlightSymbol(position);
+                            position--;
+                        }
+
+                        label7.Text = MainHeader.State.ToString();
+                        label6.Text = MainHeader.NumberMovs.ToString();
                      }
                 }
                 else MessageBox.Show("Select the Turing Machine");
@@ -67,10 +75,10 @@ namespace MTuring
             textBox1.Enabled = true;
             comboBox1.Enabled = true;
 
-            if (M.p.ERROR == false)
+            if (M.p.ERROR)
+                textBox2.Text = "Fail!"; 
+            else if (!M.p.ERROR)
                 textBox2.Text = "Succed!";
-            else if (M.p.ERROR == true)
-                textBox2.Text = "Fail!";
         }
 
         public void HighlightSymbol (int charnumber)
@@ -113,18 +121,13 @@ namespace MTuring
         {
             
         }
-        public void DrawRectangleRectangle(PaintEventArgs e)
+
+        /*private void Form1_Paint(object sender, PaintEventArgs e)
         {
-
-            // Create pen.
-            Pen blackPen = new Pen(Color.Black, 3);
-
-            // Create rectangle.
-            Rectangle rect = new Rectangle(0, 0, 200, 200);
-
-            // Draw rectangle to screen.
-            e.Graphics.DrawRectangle(blackPen, rect);
-        }
-
+            Graphics l = e.Graphics;
+            Pen p = new Pen(Color.Green, 5);
+            l.DrawRectangle(p, 50, 50, 200, 200);
+            l.Dispose();
+        }*/
     }
 }
