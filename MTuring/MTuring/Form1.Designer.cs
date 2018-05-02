@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Run_btn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -40,9 +41,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnStep = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtBInstructions = new System.Windows.Forms.TextBox();
+            this.btnPause = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // Run_btn
@@ -51,7 +54,7 @@
             this.Run_btn.Name = "Run_btn";
             this.Run_btn.Size = new System.Drawing.Size(117, 23);
             this.Run_btn.TabIndex = 0;
-            this.Run_btn.Text = "Run";
+            this.Run_btn.Text = "Instant Run";
             this.Run_btn.UseVisualStyleBackColor = true;
             this.Run_btn.Click += new System.EventHandler(this.Run_btn_Click);
             // 
@@ -162,15 +165,15 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "0";
             // 
-            // button1
+            // btnStep
             // 
-            this.button1.Location = new System.Drawing.Point(443, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Step by step";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnStep.Location = new System.Drawing.Point(443, 38);
+            this.btnStep.Name = "btnStep";
+            this.btnStep.Size = new System.Drawing.Size(117, 23);
+            this.btnStep.TabIndex = 13;
+            this.btnStep.Text = "Step by step";
+            this.btnStep.UseVisualStyleBackColor = true;
+            this.btnStep.Click += new System.EventHandler(this.button1_Click);
             // 
             // label8
             // 
@@ -190,14 +193,29 @@
             this.txtBInstructions.Size = new System.Drawing.Size(100, 192);
             this.txtBInstructions.TabIndex = 15;
             // 
+            // btnPause
+            // 
+            this.btnPause.Location = new System.Drawing.Point(326, 38);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(111, 23);
+            this.btnPause.TabIndex = 16;
+            this.btnPause.Text = "Start";
+            this.btnPause.UseVisualStyleBackColor = true;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 301);
+            this.Controls.Add(this.btnPause);
             this.Controls.Add(this.txtBInstructions);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnStep);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -231,9 +249,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnStep;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtBInstructions;
+        private System.Windows.Forms.Button btnPause;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

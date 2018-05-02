@@ -16,6 +16,7 @@ namespace MTuring
         public Form1()
         {
             InitializeComponent();
+
         }
 
         String originalString = "";
@@ -48,12 +49,12 @@ namespace MTuring
                     rtbTape.SelectionAlignment = HorizontalAlignment.Center;
                     rtbTape.DeselectAll();
                     HighlightSymbol(0); // Highlight first symbol
-                    Thread.Sleep(200);
+                    //Thread.Sleep(200);
 
                     while (M.IsFinished())
                      {
                         //Thread.Sleep(500);
-                        //Thread.SpinWait(500);
+
                         Characters = originalString.ToCharArray();
                         MainHeader = M.GetMachine(comboBox1.Text.ToString(), Characters[position], MainHeader.State);
                         ChangeCharacter(position, MainHeader.Char);
@@ -70,6 +71,8 @@ namespace MTuring
                 else MessageBox.Show("Select the Turing Machine");
             }
             else MessageBox.Show("Insert Text");
+
+
             textBox1.Enabled = true;
             comboBox1.Enabled = true;
 
@@ -80,8 +83,7 @@ namespace MTuring
         }
 
         public void HighlightSymbol (int charnumber)
-        {
-            
+        {  
             if (charnumber < 0)
                 charnumber = 0;
             rtbTape.Select(charnumber, 1);
@@ -178,6 +180,7 @@ namespace MTuring
             if (!M.IsFinished())
             {
                 firsttime = true;
+                timer1.Enabled = false;
                 if (M.p.ERROR)
                     textBox2.Text = "Fail!";
                 else if (!M.p.ERROR)
@@ -204,6 +207,31 @@ namespace MTuring
                     break;
                 default: break;
             }
+        }
+
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            /* var timer = new System.Windows.Forms.Timer();
+             timer.Tick += new EventHandler(timer1_Tick);
+             timer.Interval = 100;
+             //timer.Start();*/
+
+            if (btnPause.Text == "Stop")
+            {
+                btnPause.Text = "Start";
+                timer1.Enabled = false;
+            }
+            else 
+            {
+                btnPause.Text = "Stop";
+                timer1.Enabled = true;
+            }
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+                btnStep.PerformClick();  
         }
 
         /*int t = 0;
