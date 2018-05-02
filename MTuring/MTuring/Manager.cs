@@ -11,6 +11,8 @@ namespace MTuring
         public Palindromos p = new Palindromos();
         public Copy C = new Copy();
         public Mult M = new Mult();
+        public Add A = new Add();
+        public Sub S = new Sub();
 
         public Header GetMachine(String machineNumber, char actualChar, int StateNumber)
         {
@@ -26,13 +28,14 @@ namespace MTuring
                     M.Read(StateNumber, actualChar);
                     return M.Myheader;
                 case "Add":
-                    break;
+                    A.Read(StateNumber, actualChar);
+                    return M.Myheader;
                 case "Substract":
-                    break;
+                    S.Read(StateNumber, actualChar);
+                    return M.Myheader;
                 default:
                     return null;
             }
-            return null;
         }
 
         public bool IsFinished()

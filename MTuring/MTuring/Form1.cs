@@ -28,13 +28,14 @@ namespace MTuring
         {
             Specs();
             M = new Manager();
-            originalString = textBox1.Text.Trim() + "E";
+            originalString = textBox1.Text.Trim() + "EEE";
             textBox1.Enabled = false;
             label7.Text = "";
             label6.Text = "";
             textBox2.Text = "";
 
-            if (originalString.Trim() != "") {
+            if (originalString.Trim() != "")
+            {
                 if (comboBox1.Text.ToString() != "")
                 {
                     comboBox1.Enabled = false;
@@ -52,21 +53,23 @@ namespace MTuring
                     //Thread.Sleep(200);
 
                     while (M.IsFinished())
-                     {
+                    {
                         //Thread.Sleep(500);
+                        if (position >= originalString.Length)
+                            originalString = originalString + "E";
 
                         Characters = originalString.ToCharArray();
                         MainHeader = M.GetMachine(comboBox1.Text.ToString(), Characters[position], MainHeader.State);
                         ChangeCharacter(position, MainHeader.Char);
                         HighlightSymbol(position);
                         if (MainHeader.WhereMove == 1)
-                            position++;                        
+                            position++;
                         else
                             position--;
-                        
+
                         label7.Text = MainHeader.State.ToString();
                         label6.Text = MainHeader.NumberMovs.ToString();
-                     }
+                    }
                 }
                 else MessageBox.Show("Select the Turing Machine");
             }
@@ -77,13 +80,13 @@ namespace MTuring
             comboBox1.Enabled = true;
 
             if (M.p.ERROR)
-                textBox2.Text = "Fail!"; 
+                textBox2.Text = "Fail!";
             else if (!M.p.ERROR)
                 textBox2.Text = "Succed!";
         }
 
-        public void HighlightSymbol (int charnumber)
-        {  
+        public void HighlightSymbol(int charnumber)
+        {
             if (charnumber < 0)
                 charnumber = 0;
             rtbTape.Select(charnumber, 1);
@@ -120,17 +123,17 @@ namespace MTuring
         bool firsttime = true;
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             if (firsttime)
             {
                 M = new Manager();
-                originalString = textBox1.Text.Trim() + "E";
+                originalString = textBox1.Text.Trim() + "EEE";
                 textBox1.Enabled = false;
                 label7.Text = "";
                 label6.Text = "";
                 textBox2.Text = "";
             }
-            
+
 
             if (originalString.Trim() != "")
             {
@@ -154,7 +157,11 @@ namespace MTuring
 
                     if (M.IsFinished())
                     {
+                        if (position >= originalString.Length)
+                            originalString = originalString + "E";
+                        
                         Characters = originalString.ToCharArray();
+                        
                         MainHeader = M.GetMachine(comboBox1.Text.ToString(), Characters[position], MainHeader.State);
                         ChangeCharacter(position, MainHeader.Char);
                         HighlightSymbol(position);
@@ -180,6 +187,7 @@ namespace MTuring
             if (!M.IsFinished())
             {
                 firsttime = true;
+                btnPause.Text = "Start";
                 timer1.Enabled = false;
                 if (M.p.ERROR)
                     textBox2.Text = "Fail!";
@@ -190,7 +198,7 @@ namespace MTuring
 
         public void Specs()
         {
-           if(comboBox1.Text=="Mult")
+            if (comboBox1.Text == "Mult")
                 if (originalString.Trim()[originalString.Length - 1] != '=')
                     originalString = originalString.Trim() + "=";
         }
@@ -205,6 +213,15 @@ namespace MTuring
                 case "Mult":
                     txtBInstructions.Text = "Multiplicación en código unario: Reconoce una cadena y realiza la multiplicación respectiva.";
                     break;
+                case "Copy":
+                    txtBInstructions.Text = "Copia de patrones: Reconoce un patrón de a, b o c’s y lo copia de manera idéntica. ";
+                    break;
+                case "Add":
+                    txtBInstructions.Text = "Suma en código unario: Reconoce una cadena y realiza la suma respectiva.";
+                    break;
+                case "Sub":
+                    txtBInstructions.Text = "Resta en código unario: Reconoce una cadena y realiza la resta respectiva. ";
+                    break;
                 default: break;
             }
         }
@@ -212,42 +229,27 @@ namespace MTuring
 
         private void btnPause_Click(object sender, EventArgs e)
         {
-            /* var timer = new System.Windows.Forms.Timer();
-             timer.Tick += new EventHandler(timer1_Tick);
-             timer.Interval = 100;
-             //timer.Start();*/
-
-            if (btnPause.Text == "Stop")
+            if (comboBox1.Text.ToString() != "")
             {
-                btnPause.Text = "Start";
-                timer1.Enabled = false;
+                if (btnPause.Text == "Stop")
+                {
+                    btnPause.Text = "Start";
+                    timer1.Enabled = false;
+                }
+                else
+                {
+                    btnPause.Text = "Stop";
+                    timer1.Enabled = true;
+                }
             }
-            else 
-            {
-                btnPause.Text = "Stop";
-                timer1.Enabled = true;
-            }
+            else
+             MessageBox.Show("Select the Turing Machine"); 
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-                btnStep.PerformClick();  
+            btnStep.PerformClick();
         }
-
-        /*int t = 0;
-        private void button1_Click(object sender, EventArgs e)
-        {
-            HighlightSymbol(t++);
-        }*/
-
-
-        // button1.PerformClick();
-        /*private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics l = e.Graphics;
-            Pen p = new Pen(Color.Green, 5);
-            l.DrawRectangle(p, 50, 50, 200, 200);
-            l.Dispose();
-        }*/
     }
 }
+    
