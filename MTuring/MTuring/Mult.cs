@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MTuring
 {
-    class Copy
+    class Mult
     {
         public Header Myheader = new Header();
         public bool ERROR = false;
@@ -16,14 +16,14 @@ namespace MTuring
         {
             switch (state)
             {
-               /* case 0: S0(newCharacter); break;
-                case 1: S1(newCharacter); break;
-                case 2: S2(newCharacter); break;
-                case 3: S3(newCharacter); break;
-                case 4: S4(newCharacter); break;
-                case 5: S5(newCharacter); break;
-                case 6: S6(newCharacter); break;
-                case 7: S7(newCharacter); break;*/
+                /* case 0: S0(newCharacter); break;
+                 case 1: S1(newCharacter); break;
+                 case 2: S2(newCharacter); break;
+                 case 3: S3(newCharacter); break;
+                 case 4: S4(newCharacter); break;
+                 case 5: S5(newCharacter); break;
+                 case 6: S6(newCharacter); break;
+                 case 7: S7(newCharacter); break;*/
                 case 8: finished = true; break;
             }
         }
@@ -31,7 +31,7 @@ namespace MTuring
         public void S0(char readChar)
         {
             Myheader.NumberMovs++;
-            if (readChar == 'a')
+            if (readChar == '1')
             {
                 Myheader.Char = 'E';
                 Myheader.State = 1;
@@ -40,6 +40,5 @@ namespace MTuring
             else
                 ERROR = true;
         }
-
     }
 }

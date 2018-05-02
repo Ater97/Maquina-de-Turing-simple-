@@ -25,6 +25,7 @@ namespace MTuring
         int position = 0;
         private void Run_btn_Click(object sender, EventArgs e)
         {
+            Specs();
             M = new Manager();
             originalString = textBox1.Text.Trim() + "E";
             textBox1.Enabled = false;
@@ -117,6 +118,7 @@ namespace MTuring
         bool firsttime = true;
         private void button1_Click(object sender, EventArgs e)
         {
+            
             if (firsttime)
             {
                 M = new Manager();
@@ -180,6 +182,27 @@ namespace MTuring
                     textBox2.Text = "Fail!";
                 else if (!M.p.ERROR)
                     textBox2.Text = "Succed!";
+            }
+        }
+
+        public void Specs()
+        {
+           if(comboBox1.Text=="Mult")
+                if (originalString.Trim()[originalString.Length - 1] != '=')
+                    originalString = originalString.Trim() + "=";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox1.Text)
+            {
+                case "Palindrome":
+                    txtBInstructions.Text = "Reconocedor de cadenas palíndromas: Reconoce una cadena de a , b o c ’s y verifica que la cadena sea un palíndromo.";
+                    break;
+                case "Mult":
+                    txtBInstructions.Text = "Multiplicación en código unario: Reconoce una cadena y realiza la multiplicación respectiva.";
+                    break;
+                default: break;
             }
         }
 
