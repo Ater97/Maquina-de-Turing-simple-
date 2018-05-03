@@ -159,7 +159,12 @@ namespace MTuring
                     {
                         if (position >= originalString.Length)
                             originalString = originalString + "E";
-                        
+                       /* if (position < 0)
+                        {
+                            originalString = "E" + originalString;
+                            position = 0;
+                        }*/
+
                         Characters = originalString.ToCharArray();
                         
                         MainHeader = M.GetMachine(comboBox1.Text.ToString(), Characters[position], MainHeader.State);
@@ -252,6 +257,11 @@ namespace MTuring
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             btnStep.PerformClick();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            timer1
         }
     }
 }
