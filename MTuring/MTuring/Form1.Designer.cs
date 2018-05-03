@@ -46,6 +46,9 @@
             this.txtBInstructions = new System.Windows.Forms.TextBox();
             this.btnPause = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // Run_btn
@@ -64,7 +67,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(375, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "a";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // comboBox1
@@ -208,11 +210,30 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(207, 181);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(38, 13);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Speed";
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(251, 174);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(309, 45);
+            this.trackBar1.TabIndex = 18;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 301);
+            this.ClientSize = new System.Drawing.Size(688, 242);
+            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnPause);
             this.Controls.Add(this.txtBInstructions);
             this.Controls.Add(this.label8);
@@ -231,6 +252,7 @@
             this.Controls.Add(this.Run_btn);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,6 +277,8 @@
         private System.Windows.Forms.TextBox txtBInstructions;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }
 

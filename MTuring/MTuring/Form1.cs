@@ -259,9 +259,9 @@ namespace MTuring
             btnStep.PerformClick();
         }
 
-        private void trackBar1_Scroll(object sender, EventArgs e)
+        private void trackBar1_Scroll_1(object sender, EventArgs e)
         {
-            timer1
+
         }
     }
 }

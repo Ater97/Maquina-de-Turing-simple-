@@ -377,7 +377,6 @@ namespace MTuring
             }
             else
                 ERROR = true;
-
         }
         public void S12(char readChar)
         {
@@ -396,7 +395,7 @@ namespace MTuring
             }
             else if (readChar == 'c')
             {
-                Myheader.Char = 'c';
+                Myheader.Char = 'E';
                 Myheader.State = 11;
                 Myheader.WhereMove = 0;
             }
