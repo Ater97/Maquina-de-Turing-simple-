@@ -48,6 +48,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -213,25 +214,37 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(207, 181);
+            this.label9.Location = new System.Drawing.Point(534, 180);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 13);
+            this.label9.Size = new System.Drawing.Size(36, 13);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Speed";
+            this.label9.Text = "Faster";
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(251, 174);
+            this.trackBar1.LargeChange = 20;
+            this.trackBar1.Location = new System.Drawing.Point(212, 174);
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(309, 45);
             this.trackBar1.TabIndex = 18;
+            this.trackBar1.Tag = "Speed";
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll_1);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(170, 180);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Slower";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 242);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnPause);
@@ -279,6 +292,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label10;
     }
 }
 

@@ -261,7 +261,16 @@ namespace MTuring
 
         private void trackBar1_Scroll_1(object sender, EventArgs e)
         {
+            int v = (trackBar1.Maximum - trackBar1.Value) * 5 + 1;
 
+            timer1.Interval = v;
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            int v = (trackBar1.Maximum - trackBar1.Value) * 5 + 1;
+
+            timer1.Interval = v;
         }
     }
 }
