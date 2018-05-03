@@ -71,6 +71,7 @@ namespace MTuring
                         label7.Text = MainHeader.State.ToString();
                         label6.Text = MainHeader.NumberMovs.ToString();
                     }
+                    
                 }
                 else MessageBox.Show("Select the Turing Machine");
             }
@@ -80,10 +81,14 @@ namespace MTuring
             textBox1.Enabled = true;
             comboBox1.Enabled = true;
 
-            if (M.ERROR())
-                textBox2.Text = "Fail!";
-            else if (!M.ERROR())
-                textBox2.Text = "Succed!";
+            if (!M.IsFinished())
+            {
+                if (M.ERROR())
+                    textBox2.Text = "Fail!";
+                else if (!M.ERROR())
+                    textBox2.Text = "Succed!";
+            }
+
         }
 
         public void HighlightSymbol(int charnumber)
@@ -271,6 +276,23 @@ namespace MTuring
             int v = (trackBar1.Maximum - trackBar1.Value) * 5 + 1;
 
             timer1.Interval = v;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.ForeColor = Color.Black;
+            if (textBox2.Text == "Fail!")
+            {
+                textBox2.BackColor = Color.OrangeRed;
+            }
+            else if(textBox2.Text == "Succed!")
+            {
+                textBox2.BackColor = Color.Green;
+            }
+            else
+            {
+                textBox2.BackColor = Color.White;
+            }
         }
     }
 }
