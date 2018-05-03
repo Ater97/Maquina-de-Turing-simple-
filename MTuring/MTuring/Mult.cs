@@ -14,6 +14,8 @@ namespace MTuring
 
         public void Read(int state, char newCharacter)
         {
+            if (newCharacter != '1' && newCharacter != '*'&& newCharacter != 'E')
+                ERROR = true;
             switch (state)
             {
                 case 0: S0(newCharacter); break;

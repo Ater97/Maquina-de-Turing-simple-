@@ -50,18 +50,19 @@ namespace MTuring
                     rtbTape.SelectionAlignment = HorizontalAlignment.Center;
                     rtbTape.DeselectAll();
                     HighlightSymbol(0); // Highlight first symbol
-                    //Thread.Sleep(200);
 
                     while (M.IsFinished())
                     {
-                        //Thread.Sleep(500);
                         if (position >= originalString.Length)
                             originalString = originalString + "E";
 
                         Characters = originalString.ToCharArray();
                         MainHeader = M.GetMachine(comboBox1.Text.ToString(), Characters[position], MainHeader.State);
-                        ChangeCharacter(position, MainHeader.Char);
-                        HighlightSymbol(position);
+                        if (M.IsFinished())
+                        {
+                            ChangeCharacter(position, MainHeader.Char);
+                            HighlightSymbol(position);
+                        }
                         if (MainHeader.WhereMove == 1)
                             position++;
                         else
@@ -79,9 +80,9 @@ namespace MTuring
             textBox1.Enabled = true;
             comboBox1.Enabled = true;
 
-            if (M.p.ERROR)
+            if (M.ERROR())
                 textBox2.Text = "Fail!";
-            else if (!M.p.ERROR)
+            else if (!M.ERROR())
                 textBox2.Text = "Succed!";
         }
 
@@ -100,7 +101,6 @@ namespace MTuring
             if (CharPosition < 0)
                 CharPosition = 0;
             Characters[CharPosition] = newChar;
-            //originalString = new string(Characters).Replace("E", "");
             originalString = new string(Characters);
             rtbTape.ResetText();
             rtbTape.Text = originalString;
@@ -163,8 +163,11 @@ namespace MTuring
                         Characters = originalString.ToCharArray();
                         
                         MainHeader = M.GetMachine(comboBox1.Text.ToString(), Characters[position], MainHeader.State);
-                        ChangeCharacter(position, MainHeader.Char);
-                        HighlightSymbol(position);
+                        if (M.IsFinished())
+                        {
+                            ChangeCharacter(position, MainHeader.Char);
+                            HighlightSymbol(position);
+                        }
                         if (MainHeader.WhereMove == 1)
                             position++;
                         else
@@ -189,9 +192,9 @@ namespace MTuring
                 firsttime = true;
                 btnPause.Text = "Start";
                 timer1.Enabled = false;
-                if (M.p.ERROR)
+                if (M.ERROR())
                     textBox2.Text = "Fail!";
-                else if (!M.p.ERROR)
+                else if (!M.ERROR())
                     textBox2.Text = "Succed!";
             }
         }

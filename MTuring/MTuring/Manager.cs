@@ -38,6 +38,13 @@ namespace MTuring
             }
         }
 
+        public bool ERROR()
+        {
+            if (p.ERROR || C.ERROR || M.ERROR || A.ERROR || S.ERROR )
+                return true;
+            return false;
+        }
+
         public bool IsFinished()
         {
             if (p.ERROR == true || p.finished == true || C.ERROR == true || C.finished == true
