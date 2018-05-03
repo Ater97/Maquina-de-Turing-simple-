@@ -294,6 +294,12 @@ namespace MTuring
                 textBox2.BackColor = Color.White;
             }
         }
+
+        private void rtbTape_TextChanged(object sender, EventArgs e)
+        {
+            rtbTape.SelectionStart = rtbTape.Text.Length;
+            rtbTape.ScrollToCaret();
+        }
     }
 }
     

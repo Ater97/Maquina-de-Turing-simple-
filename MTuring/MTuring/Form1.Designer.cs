@@ -142,6 +142,7 @@
             this.rtbTape.Size = new System.Drawing.Size(548, 63);
             this.rtbTape.TabIndex = 8;
             this.rtbTape.Text = "";
+            this.rtbTape.TextChanged += new System.EventHandler(this.rtbTape_TextChanged);
             // 
             // label4
             // 
