@@ -38,7 +38,7 @@ namespace MTuring
             }
             else if (readChar == '-')
             {
-                Myheader.Char = '1';
+                Myheader.Char = '-';
                 Myheader.State = 5;
                 Myheader.WhereMove = 1;
             }

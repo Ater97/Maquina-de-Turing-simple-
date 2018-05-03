@@ -91,7 +91,7 @@ namespace MTuring
             if (charnumber < 0)
                 charnumber = 0;
             rtbTape.Select(charnumber, 1);
-            rtbTape.SelectionBackColor = Color.Red;
+            rtbTape.SelectionBackColor = Color.BlanchedAlmond;
             rtbTape.SelectionColor = Color.Black;
             rtbTape.DeselectAll();
         }

@@ -119,8 +119,8 @@
             // 
             // rtbTape
             // 
-            this.rtbTape.Font = new System.Drawing.Font("MS Reference Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbTape.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.rtbTape.Font = new System.Drawing.Font("Sitka Text", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbTape.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.rtbTape.Location = new System.Drawing.Point(12, 105);
             this.rtbTape.Multiline = false;
             this.rtbTape.Name = "rtbTape";
