@@ -29,10 +29,10 @@ namespace MTuring
                     return M.Myheader;
                 case "Add":
                     A.Read(StateNumber, actualChar);
-                    return M.Myheader;
+                    return A.Myheader;
                 case "Substract":
                     S.Read(StateNumber, actualChar);
-                    return M.Myheader;
+                    return S.Myheader;
                 default:
                     return null;
             }
@@ -41,7 +41,8 @@ namespace MTuring
         public bool IsFinished()
         {
             if (p.ERROR == true || p.finished == true || C.ERROR == true || C.finished == true
-                || M.ERROR == true || M.finished == true)
+                || M.ERROR == true || M.finished == true || A.ERROR == true || A.finished == true
+                 || S.ERROR == true || S.finished == true)
                 return false;
             return true;
         }

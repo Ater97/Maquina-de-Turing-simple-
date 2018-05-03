@@ -40,6 +40,18 @@ namespace MTuring
             else
                 ERROR = true;
         }
+        public void S1(char readChar)
+        {
+            Myheader.NumberMovs++;
+            if (readChar == 'a')
+            {
+                Myheader.Char = 'E';
+                Myheader.State = 1;
+                Myheader.WhereMove = 1;
+            }
+            else
+                ERROR = true;
+        }
 
     }
 }
