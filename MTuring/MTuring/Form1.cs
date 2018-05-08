@@ -83,7 +83,7 @@ namespace MTuring
 
             if (!M.IsFinished())
             {
-                if (M.ERROR())
+                if (M.ERROR() || checkCeros())
                     textBox2.Text = "Fail!";
                 else if (!M.ERROR())
                     textBox2.Text = "Succed!";
@@ -202,7 +202,7 @@ namespace MTuring
                 firsttime = true;
                 btnPause.Text = "Start";
                 timer1.Enabled = false;
-                if (M.ERROR())
+                if (M.ERROR() || checkCeros())
                     textBox2.Text = "Fail!";
                 else if (!M.ERROR())
                     textBox2.Text = "Succed!";
@@ -242,6 +242,8 @@ namespace MTuring
 
         private void btnPause_Click(object sender, EventArgs e)
         {
+            textBox2.Text = "";
+            textBox2.BackColor = Color.White;
             if (comboBox1.Text.ToString() != "")
             {
                 if (btnPause.Text == "Stop")
@@ -299,6 +301,32 @@ namespace MTuring
         {
             rtbTape.SelectionStart = rtbTape.Text.Length;
             rtbTape.ScrollToCaret();
+        }
+
+        public Boolean checkCeros()
+        {
+            if (comboBox1.Text.ToString() == "Add")
+            {
+                if(textBox1.Text.Trim()=="+")
+                {
+                    return true;
+                }
+            }
+            else if (comboBox1.Text.ToString() == "Substract")
+            {
+                if (textBox1.Text.Trim() == "-")
+                {
+                    return true;
+                }
+            }
+            else if (comboBox1.Text.ToString() == "Mult")
+            {
+                if (textBox1.Text.Trim() == "*")
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
